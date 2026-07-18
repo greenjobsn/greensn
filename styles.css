@@ -9,3 +9,35 @@
 .name-point{position:relative;display:inline-block;z-index:1}
 .name-point:after{content:"";position:absolute;left:-4px;right:-10px;bottom:.08em;height:3px;background:var(--accent);border-radius:999px;transform:rotate(-7deg);transform-origin:left center;pointer-events:none}
 @media(max-width:560px){.partner-point:after{left:-10px;right:-12px;border-width:2px}.name-point:after{height:2px}}
+
+/* 2026-07 About photo + hand-drawn double underline refinements */
+.about-grid{grid-template-columns:1.08fr .92fr;gap:58px}
+.image-frame{border-radius:20px;box-shadow:0 18px 44px rgba(63,52,45,.12);background:var(--paper)}
+.image-frame img{aspect-ratio:4/3;object-fit:cover;object-position:center center}
+.image-frame:before{top:20px;bottom:20px;left:18px}
+.line-dot{left:13px}
+
+/* 김현정 / 가능성: 동일한 오렌지색 손그림 이중 사선 밑줄 */
+.name-point,.marker{position:relative;display:inline-block;z-index:1}
+.name-point:before,.name-point:after,.marker:before,.marker:after{
+  content:"";
+  position:absolute;
+  left:-4px;
+  right:-9px;
+  height:3px;
+  background:var(--accent);
+  border-radius:999px;
+  transform-origin:left center;
+  pointer-events:none;
+  z-index:-1;
+}
+.name-point:before,.marker:before{bottom:.01em;transform:rotate(-6deg)}
+.name-point:after,.marker:after{bottom:-.12em;transform:rotate(-3deg);opacity:.92}
+
+@media(max-width:820px){
+  .about-grid{grid-template-columns:1fr;gap:42px}
+  .image-frame img{aspect-ratio:16/10}
+}
+@media(max-width:560px){
+  .name-point:before,.name-point:after,.marker:before,.marker:after{height:2px}
+}
